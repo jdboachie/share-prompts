@@ -28,7 +28,7 @@ const Nav = () => {
         className="flex gap-2 flex-center"
       >
         <Image
-          src={ session?.user.image }
+          src="/assets/images/logo.svg"
           alt="shareprompt logo"
           width={30}
           height={30}
@@ -78,7 +78,7 @@ const Nav = () => {
         {session?.user ? (
           <div className="flex">
             <Image
-              src="/assets/images/logo.svg"
+              src={ session?.user.image }
               alt="profile"
               width={37}
               height={37}
