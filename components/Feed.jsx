@@ -1,9 +1,8 @@
 'use client';
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import PromptCard from './PromptCard';
-
-export const fetchCache = 'force-no-store';
+import { fetchPosts } from '@app/lib/actions';
 
 const PromptCardList = ({ data, handleTagClick }) => {
   return (
@@ -28,16 +27,7 @@ const Feed = () => {
     setSearchText(e.target.value)
   }
 
-  useEffect(() => {
-    const fetchPosts = async () => {
-      const response = await fetch('/api/prompt', { cache: 'no-store' })
-      const data = await response.json()
-      console.log(data)
-      setPosts(data)
-    }
-
-    fetchPosts()
-  }, [])
+  fetchPosts()
 
   return (
     <section className='feed'>
