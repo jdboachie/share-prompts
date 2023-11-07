@@ -43,13 +43,13 @@ const PromptCard = ({ prompt, handleTagClick, handleEdit, handleDelete }) => {
           {copied === prompt.prompt ? (
             <>
               <CheckIcon
-                className='w-[12px] h-[12px]'
+                className='w-[20px] h-[20px]'
               />
             </>
           ) : (
             <>
               <ClipboardIcon
-                className='w-[12px] h-[12px]'
+                className='w-[20px] h-[20px]'
               />
             </>
           )}
