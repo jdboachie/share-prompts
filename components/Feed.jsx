@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import PromptCard from './PromptCard';
 
+export const fetchCache = 'force-no-store';
 
 const PromptCardList = ({ data, handleTagClick }) => {
   return (
