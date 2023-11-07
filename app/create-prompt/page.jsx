@@ -15,6 +15,7 @@ const CreatePrompt = () => {
     })
 
     const createPrompt = async (e) => {
+        console.log('creating prompt...')
         e.preventDefault()
         setSubmitting(true)
 

@@ -9,7 +9,7 @@ const Form = ({
     handleSubmit }) => {
     return (
         <section
-            className="w-full max-w-full flex-start flex-col"
+            className="w-full max-w-full flex-start flex-col mb-10"
         >
             <h1 className="head_text text-left">
                 <span className="blue_gradient">{type}</span> Prompt
@@ -56,11 +56,11 @@ const Form = ({
                     className="form_input"
                 ></input>
                 <div
-                    className="flex-between mx-3 mb-5 gap-4"
+                    className="flex-end mx-3 mb-5 gap-3"
                 >
                     <Link
                         href="/"
-                        className="text-gray-500 text-sm"
+                        className="text-gray-500 text-sm border px-5 py-1.5 rounded-full"
                     >
                         Cancel
                     </Link>
