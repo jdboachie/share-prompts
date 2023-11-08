@@ -16,7 +16,7 @@ const UserSchema = new Schema({
 
     image: {
         type: String,
-        default: '/public/assets/images/logo.svg',
+        default: '/images/default.png',
     }
 })
 

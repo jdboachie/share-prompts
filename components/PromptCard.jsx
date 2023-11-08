@@ -20,7 +20,7 @@ const PromptCard = ({ prompt, handleTagClick, handleEdit, handleDelete }) => {
       <div className='flex justify-between items-start gap-5'>
         <div className='flex flex-1 justify-start items-center gap-3 cursor-pointer'>
           <Image
-            src={prompt.creator.image}
+            src={prompt.creator?.image}
             alt='user image'
             width={40}
             height={40}
@@ -29,10 +29,10 @@ const PromptCard = ({ prompt, handleTagClick, handleEdit, handleDelete }) => {
 
           <div className='flex flex-col'>
             <h3 className='tont-satoshi font-semibold text-gray-900'>
-              {prompt.creator.username}
+              {prompt.creator?.username}
             </h3>
             <p className='font-inter text-sm text-gray-500'>
-              {prompt.creator.email}
+              {prompt.creator?.email}
             </p>
           </div>
         </div>
@@ -43,13 +43,13 @@ const PromptCard = ({ prompt, handleTagClick, handleEdit, handleDelete }) => {
           {copied === prompt.prompt ? (
             <>
               <CheckIcon
-                className='w-[20px] h-[20px]'
+                className='w-[12px] h-[12px]'
               />
             </>
           ) : (
             <>
               <ClipboardIcon
-                className='w-[20px] h-[20px]'
+                className='w-[12px] h-[12px]'
               />
             </>
           )}

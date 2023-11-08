@@ -18,7 +18,6 @@ const CreatePrompt = () => {
     })
 
     const createPrompt = async (e) => {
-        console.log('creating prompt...')
         e.preventDefault()
         setSubmitting(true)
 
@@ -30,7 +29,6 @@ const CreatePrompt = () => {
                     userId: session?.user.id,
                     tag: post.tag,
                 }),
-                cache: 'no-store',
             })
 
             if (response.ok) {
@@ -47,8 +45,8 @@ const CreatePrompt = () => {
         <Form
             type="Create"
             post={post}
-            submitting={submitting}
             setPost={setPost}
+            submitting={submitting}
             handleSubmit={createPrompt}
         />
     )

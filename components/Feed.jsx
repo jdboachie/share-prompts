@@ -1,8 +1,8 @@
 'use client';
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import PromptCard from './PromptCard';
-import { fetchPosts } from '@app/lib/actions';
+
 
 const PromptCardList = ({ data, handleTagClick }) => {
   return (
@@ -27,7 +27,18 @@ const Feed = () => {
     setSearchText(e.target.value)
   }
 
-  fetchPosts()
+
+  const fetchPost = async () => {
+    const response = await fetch('/api/prompt')
+    const data = await response.json()
+    console.log("posts:", posts)
+    setPosts(data)
+  }
+
+  useEffect(() => {
+    fetchPost()
+  }, [])
+
 
   return (
     <section className='feed'>
