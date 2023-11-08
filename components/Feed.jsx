@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from 'react'
 import PromptCard from './PromptCard';
+import { getPosts } from '@app/lib/data'
+import { set } from 'mongoose';
 
 
 const PromptCardList = ({ data, handleTagClick }) => {
@@ -29,8 +31,7 @@ const Feed = () => {
 
 
   const fetchPost = async () => {
-    const response = await fetch('/api/prompt', { cache: 'no-cache' })
-    const data = await response.json()
+    const data = await getPosts()
     console.log("posts:", posts)
     setPosts(data)
   }
@@ -38,6 +39,9 @@ const Feed = () => {
   useEffect(() => {
     fetchPost()
   }, [])
+
+  // const postData = getPosts()
+  // setPosts(postData)
 
 
   return (
