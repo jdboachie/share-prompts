@@ -29,7 +29,7 @@ const Feed = () => {
 
 
   const fetchPost = async () => {
-    const response = await fetch('/api/prompt')
+    const response = await fetch('/api/prompt', { next: { revalidate: 0 } })
     const data = await response.json()
     console.log("posts:", posts)
     setPosts(data)
